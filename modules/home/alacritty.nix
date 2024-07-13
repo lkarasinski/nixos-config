@@ -9,7 +9,6 @@
           family = "FiraCode Nerd Font Mono";
         };
       };
-
     };
   };
 }
