@@ -9,9 +9,15 @@
     obsidian
     firefox
     google-chrome
+    spotify
 
     nodejs
+    bun
     git
+    nodePackages.pnpm
+    nodePackages."@antfu/ni"
+    biome
+    tailwindcss
 
     fzf
     lazygit
@@ -21,5 +27,11 @@
     unzip
     wget
     zoxide
+    tmuxp
+
+    # Work
+    jitsi-meet-electron
+    openfortivpn
+    rocketchat-desktop
   ]);
 }
