@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, pkgsUnstable,  ... }: 
 {
   nixpkgs.config.allowUnfree = true;
   home.packages = (with pkgs; [
@@ -14,7 +14,7 @@
     nodejs
     bun
     git
-    nodePackages.pnpm
+    pkgsUnstable.nodePackages.pnpm
     nodePackages."@antfu/ni"
     biome
     tailwindcss

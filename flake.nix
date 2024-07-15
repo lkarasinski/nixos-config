@@ -2,7 +2,8 @@
   description = "My system configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-24.05";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -15,9 +16,11 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ...}@inputs: 
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ...}@inputs: 
   let 
+    inherit (self) outputs;
     system = "x86_64-linux";
+    pkgsUnstable = import nixpkgs-unstable { inherit system; };
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -31,6 +34,7 @@
     homeConfigurations.lkarasinski = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
       modules = [ ./modules/home/default.nix ];
+      extraSpecialArgs = { inherit inputs pkgsUnstable outputs; };
     };
   };
 }

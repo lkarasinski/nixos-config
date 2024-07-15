@@ -30,4 +30,6 @@
       theme = "robbyrussell";
     };
   };
+
+  programs.zoxide.enableZshIntegration = true;
 }
