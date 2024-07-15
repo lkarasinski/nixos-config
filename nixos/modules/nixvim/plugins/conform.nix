@@ -29,8 +29,8 @@
         lua-ls.enable = true;
         html.enable = true;
         nil-ls.enable = true;
+        tailwindcss.enable = true;
       };
     };
-
   }; 
 }
