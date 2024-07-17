@@ -10,6 +10,7 @@
     firefox
     google-chrome
     spotify
+    thunderbird
 
     nodejs
     bun
