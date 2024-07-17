@@ -67,6 +67,12 @@
         options.silent = true;
         action = "lua require('bufdelete').bufdelete(0, true)";
       }
+      {
+        mode = "x";
+        key = "<leader>p";
+        action = ''"_dP'';
+        options = { desc = "Deletes to void register and paste over"; };
+      }
 
       # Git
       {
@@ -75,6 +81,8 @@
         options.silent = true;
         action = ":LazyGit<CR>";
       }
+
+
     ];
   };
 }
