@@ -19,6 +19,10 @@
       pkgs = "nvim ${flakeDir}/nixos/packages.nix";
 
       ff = "fastfetch";
+
+      forti = "tmuxp load ~/tmux-sessions/forti.yaml";
+      ksc = "tmuxp load ~/tmux-sessions/ksc.yaml";
+
     };
 
     history.size = 10000;
