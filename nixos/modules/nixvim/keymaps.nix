@@ -65,14 +65,19 @@
         mode = "n";
         key = "<leader>c";
         options.silent = true;
-        action = "lua require('bufdelete').bufdelete(0, true)";
+        action = { __raw = ''
+          function()
+            require('bufdelete').bufdelete(0, true)
+          end
+          '';
+        };
       }
       {
-        mode = "x";
-        key = "<leader>p";
-        action = ''"_dP'';
-        options = { desc = "Deletes to void register and paste over"; };
-      }
+      mode = "x";
+      key = "<leader>p";
+      action = ''"_dP'';
+      options = { desc = "Deletes to void register and paste over"; };
+    }
 
       # Git
       {
