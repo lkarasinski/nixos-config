@@ -29,6 +29,7 @@
     wget
     zoxide
     tmuxp
+    fastfetch
 
     # Work
     jitsi-meet-electron
