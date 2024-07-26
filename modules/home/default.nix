@@ -8,6 +8,7 @@
     imports = [
       ./alacritty.nix
       ./git.nix
+      ./lazygit.nix
       ./packages.nix
       ./ssh.nix
       ./tmux.nix
