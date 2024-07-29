@@ -68,11 +68,11 @@
             action = "open_float";
             desc = "Line Diagnostics";
           };
-          "ln" = {
+          "<leader>ln" = {
             action = "goto_next";
             desc = "Next Diagnostic";
           };
-          "lp" = {
+          "<leader>lp" = {
             action = "goto_prev";
             desc = "Previous Diagnostic";
           };
