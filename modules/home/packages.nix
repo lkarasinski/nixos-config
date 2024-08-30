@@ -17,6 +17,8 @@
     git
     pkgsUnstable.nodePackages.pnpm
     nodePackages."@antfu/ni"
+    nodePackages.typescript
+    typescript
     biome
     tailwindcss
 
@@ -30,6 +32,7 @@
     zoxide
     tmuxp
     fastfetch
+    any-nix-shell
 
     # Work
     jitsi-meet-electron
