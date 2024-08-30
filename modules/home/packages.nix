@@ -1,4 +1,4 @@
-{ pkgs, pkgsUnstable,  ... }: 
+{ inputs, pkgs, pkgsUnstable,  ... }: 
 {
   nixpkgs.config.allowUnfree = true;
   home.packages = (with pkgs; [
@@ -11,6 +11,7 @@
     google-chrome
     spotify
     thunderbird
+    inputs.neovim-flake.packages.${pkgs.system}.default
 
     nodejs
     bun
