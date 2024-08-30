@@ -1,7 +1,8 @@
 {
   programs.git = {
     enable = true;
-    userName = "lkarasinski";
-    userEmail = "lukasz.karasinski.15@gmail.com";
+    userName = "Łukasz Karasiński";
+    userEmail = "lukasz@karasin.ski";
+    ignores = [ "shell.nix" ];
   };
 }
