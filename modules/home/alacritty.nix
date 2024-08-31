@@ -3,10 +3,9 @@
     enable = true;
     settings = {
       font = {
-        size = 12.0;
-        # draw_bold_text_with_bright_colors = true;
+        size = 14.0;
         normal = {
-          family = "FiraCode Nerd Font Mono";
+          family = "CaskaydiaCove Nerd Font Mono";
         };
       };
     };
