@@ -7,10 +7,17 @@
 		keyMode = "vi";
 		mouse = true;
 		shortcut = "a";
+		terminal = "tmux-256color";
 		extraConfig = ''
 			set -g set-clipboard on
 
             set -g status-interval 1
+
+			set -g default-terminal "tmux-256color"
+			set -ag terminal-overrides ",alacritty:RGB"
+			set -as terminal-features ",alacritty:RGB"
+			set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'
+			set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'
 
 			set -g status-position top
 			set -g status-style 'bg=#1e1e2e'

@@ -2,6 +2,9 @@
   programs.alacritty = {
     enable = true;
     settings = {
+	  env = {
+        TERM = "alacritty";
+      };
       font = {
         size = 14.0;
         normal = {
