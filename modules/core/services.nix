@@ -5,7 +5,6 @@
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    PasswordAuthentication = true;
   };
 
   # Enable the KDE Plasma Desktop Environment.
