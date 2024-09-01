@@ -34,6 +34,10 @@
     tmuxp
     fastfetch
     any-nix-shell
+	fd
+	bat
+	sqlite
+	grc
 
     # Work
     jitsi-meet-electron
