@@ -38,6 +38,7 @@
 	bat
 	sqlite
 	grc
+	devenv
 
     # Work
     jitsi-meet-electron
