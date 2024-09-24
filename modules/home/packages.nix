@@ -17,6 +17,7 @@
     bun
     git
     pkgsUnstable.nodePackages.pnpm
+    pkgsUnstable.nodePackages.yarn
     nodePackages."@antfu/ni"
     nodePackages.typescript
     typescript
