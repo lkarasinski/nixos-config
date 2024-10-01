@@ -13,4 +13,7 @@
 
   programs.ssh.startAgent = true;
   programs.nix-ld.enable = true;
+
+  # Bluetooth
+  hardware.bluetooth.enable = true;
 }
