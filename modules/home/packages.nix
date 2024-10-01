@@ -40,6 +40,7 @@
 	sqlite
 	grc
 	devenv
+	btop
 
     # Work
     jitsi-meet-electron
