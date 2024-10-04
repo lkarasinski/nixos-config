@@ -10,7 +10,7 @@
     firefox
     google-chrome
     spotify
-    thunderbird
+	bitwarden-desktop
     inputs.neovim-flake.packages.${pkgs.system}.default
 
     nodejs
