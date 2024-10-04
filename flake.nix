@@ -11,9 +11,14 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+	sps-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ...}@inputs: 
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, sops-nix, ...}@inputs: 
   let 
     inherit (self) outputs;
     system = "x86_64-linux";
@@ -23,6 +28,7 @@
       inherit system;
       modules = [
         (import ./hosts/nixos)
+		sops-nix.nixosModules.sops
       ];
     };
 
