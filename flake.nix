@@ -23,18 +23,29 @@
     inherit (self) outputs;
     system = "x86_64-linux";
     pkgsUnstable = import nixpkgs-unstable { inherit system; };
+	cbtxt = pkgsUnstable.callPackage ./pkgs/cbtxt.nix {
+	inherit (pkgsUnstable) wl-clipboard xclip;
+	};
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
         (import ./hosts/nixos)
 		sops-nix.nixosModules.sops
+		{
+          _module.args.pkgsUnstable = pkgsUnstable;
+          environment.systemPackages = [ cbtxt ];
+        }
       ];
     };
 
     homeConfigurations.lkarasinski = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
-      modules = [ ./modules/home/default.nix ];
+      modules = [ ./modules/home/default.nix
+	  {
+          home.packages = [ cbtxt ];
+        }
+	  ];
       extraSpecialArgs = { inherit inputs pkgsUnstable outputs; };
     };
   };
