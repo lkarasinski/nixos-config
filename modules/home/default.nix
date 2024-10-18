@@ -7,6 +7,7 @@
 	
     imports = [
       ./alacritty.nix
+	  ./direnv.nix
 	  ./fish.nix
       ./git.nix
       ./lazygit.nix

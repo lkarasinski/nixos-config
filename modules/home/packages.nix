@@ -40,6 +40,7 @@
 	sqlite
 	grc
 	devenv
+	direnv
 	btop
 
     # Work

@@ -39,5 +39,9 @@
 
 		  set-anthropic-key = "set -gx ANTHROPIC_API_KEY (sudo cat /run/secrets/ANTHROPIC_API_KEY)";
 		};
+
+		interactiveShellInit = ''
+		  direnv hook fish | source
+		'';
 	};
 }
