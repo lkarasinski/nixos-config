@@ -25,10 +25,10 @@
       git
       pkgsUnstable.nodePackages.pnpm
       pkgsUnstable.nodePackages.yarn
-      nodePackages."@antfu/ni"
-      nodePackages.typescript
-      typescript
-      biome
+      pkgsUnstable.nodePackages."@antfu/ni"
+      pkgsUnstable.nodePackages.typescript
+      pkgsUnstable.typescript
+      pkgsUnstable.biome
       tailwindcss
 
       fzf
@@ -46,7 +46,7 @@
       bat
       sqlite
       grc
-      devenv
+      pkgsUnstable.devenv
       direnv
       btop
 
