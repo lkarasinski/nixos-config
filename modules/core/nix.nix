@@ -1,6 +1,12 @@
 {
-  nix.settings = { 
-	  experimental-features = [ "nix-command" "flakes" ];
-	  trusted-users = [ "root" "lkarasinski" ];
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    trusted-users = [
+      "root"
+      "lkarasinski"
+    ];
   };
 }

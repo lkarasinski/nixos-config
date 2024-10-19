@@ -7,7 +7,7 @@
     ./networking.nix
     ./nix.nix
     ./services.nix
-	./sops.nix
+    ./sops.nix
     ./system.nix
     ./user.nix
     ./xserver.nix

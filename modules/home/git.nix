@@ -5,8 +5,8 @@
     userEmail = "lukasz@karasin.ski";
     ignores = [ "shell.nix" ];
 
-	extraConfig = {
-		rerere.enabled = true;
-	};
+    extraConfig = {
+      rerere.enabled = true;
+    };
   };
 }

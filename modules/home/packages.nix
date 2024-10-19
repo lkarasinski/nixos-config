@@ -1,51 +1,59 @@
-{ inputs, pkgs, pkgsUnstable,  ... }: 
+{
+  inputs,
+  pkgs,
+  pkgsUnstable,
+  ...
+}:
 {
   nixpkgs.config.allowUnfree = true;
-  home.packages = (with pkgs; [
-    alacritty
-    chromium
-    obs-studio
-    vesktop
-    obsidian
-    firefox
-    google-chrome
-    spotify
-	bitwarden-desktop
-    inputs.neovim-flake.packages.${pkgs.system}.default
+  home.packages = (
+    with pkgs;
+    [
+      alacritty
+      chromium
+      obs-studio
+      vesktop
+      obsidian
+      firefox
+      google-chrome
+      spotify
+      bitwarden-desktop
+      inputs.neovim-flake.packages.${pkgs.system}.default
 
-    nodejs
-    bun
-    git
-    pkgsUnstable.nodePackages.pnpm
-    pkgsUnstable.nodePackages.yarn
-    nodePackages."@antfu/ni"
-    nodePackages.typescript
-    typescript
-    biome
-    tailwindcss
+      nodejs
+      bun
+      git
+      pkgsUnstable.nodePackages.pnpm
+      pkgsUnstable.nodePackages.yarn
+      nodePackages."@antfu/ni"
+      nodePackages.typescript
+      typescript
+      biome
+      tailwindcss
 
-    fzf
-    lazygit
-    ripgrep
-    ffmpeg
-    wl-clipboard
-    unzip
-    wget
-    zoxide
-    tmuxp
-    fastfetch
-    any-nix-shell
-	fd
-	bat
-	sqlite
-	grc
-	devenv
-	direnv
-	btop
+      fzf
+      lazygit
+      ripgrep
+      ffmpeg
+      wl-clipboard
+      unzip
+      wget
+      zoxide
+      tmuxp
+      fastfetch
+      any-nix-shell
+      fd
+      bat
+      sqlite
+      grc
+      devenv
+      direnv
+      btop
 
-    # Work
-    jitsi-meet-electron
-    openfortivpn
-    rocketchat-desktop
-  ]);
+      # Work
+      jitsi-meet-electron
+      openfortivpn
+      rocketchat-desktop
+    ]
+  );
 }
