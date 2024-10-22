@@ -30,7 +30,10 @@
     let
       inherit (self) outputs;
       system = "x86_64-linux";
-      pkgsUnstable = import nixpkgs-unstable { inherit system; };
+      pkgsUnstable = import nixpkgs-unstable {
+        inherit system;
+        nixpkgs.config.allowUnfree = true;
+      };
       cbtxt = pkgsUnstable.callPackage ./pkgs/cbtxt.nix { inherit (pkgsUnstable) wl-clipboard xclip; };
     in
     {
@@ -42,6 +45,7 @@
           {
             _module.args.pkgsUnstable = pkgsUnstable;
             environment.systemPackages = [ cbtxt ];
+            nixpkgs.config.allowUnfree = true;
           }
         ];
       };
