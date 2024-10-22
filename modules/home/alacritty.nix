@@ -15,6 +15,20 @@
           family = "CaskaydiaCove Nerd Font Mono";
         };
       };
+      window = {
+        dimensions = {
+          columns = 130;
+          lines = 45;
+        };
+      };
+      keyboard = {
+        bindings = [
+          {
+            key = "F11";
+            action = "ToggleFullscreen";
+          }
+        ];
+      };
       colors = {
         primary = {
           background = "#181616";
