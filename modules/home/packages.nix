@@ -49,6 +49,7 @@
       pkgsUnstable.devenv
       direnv
       btop
+      gh
 
       # Work
       jitsi-meet-electron
