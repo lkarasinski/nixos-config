@@ -18,48 +18,46 @@
     };
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      nixpkgs-unstable,
-      home-manager,
-      sops-nix,
-      ...
-    }@inputs:
-    let
-      inherit (self) outputs;
-      system = "x86_64-linux";
-      pkgsUnstable = import nixpkgs-unstable {
-        inherit system;
-        nixpkgs.config.allowUnfree = true;
-      };
-      cbtxt = pkgsUnstable.callPackage ./pkgs/cbtxt.nix { inherit (pkgsUnstable) wl-clipboard xclip; };
-    in
-    {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          (import ./hosts/nixos)
-          sops-nix.nixosModules.sops
-          {
-            _module.args.pkgsUnstable = pkgsUnstable;
-            environment.systemPackages = [ cbtxt ];
-            nixpkgs.config.allowUnfree = true;
-          }
-        ];
-      };
-
-      homeConfigurations.lkarasinski = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
-        modules = [
-          ./modules/home/default.nix
-          { home.packages = [ cbtxt ]; }
-        ];
-        extraSpecialArgs = {
-          inherit inputs pkgsUnstable outputs;
-        };
-      };
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
+  outputs = {
+    self,
+    nixpkgs,
+    nixpkgs-unstable,
+    home-manager,
+    sops-nix,
+    ...
+  } @ inputs: let
+    inherit (self) outputs;
+    system = "x86_64-linux";
+    pkgsUnstable = import nixpkgs-unstable {
+      inherit system;
+      nixpkgs.config.allowUnfree = true;
     };
+    cbtxt = pkgsUnstable.callPackage ./pkgs/cbtxt.nix {inherit (pkgsUnstable) wl-clipboard xclip;};
+  in {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      inherit system;
+      modules = [
+        (import ./hosts/nixos)
+        sops-nix.nixosModules.sops
+        {
+          _module.args.pkgsUnstable = pkgsUnstable;
+          environment.systemPackages = [cbtxt];
+          nixpkgs.config.allowUnfree = true;
+          nix.nixPath = ["nixpkgs=${nixpkgs}"];
+        }
+      ];
+    };
+
+    homeConfigurations.lkarasinski = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.${system};
+      modules = [
+        ./modules/home/default.nix
+        {home.packages = [cbtxt];}
+      ];
+      extraSpecialArgs = {
+        inherit inputs pkgsUnstable outputs;
+      };
+    };
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
+  };
 }
