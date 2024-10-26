@@ -56,6 +56,7 @@
     };
 
     interactiveShellInit = ''
+      fish_vi_key_bindings
       direnv hook fish | source
     '';
   };
