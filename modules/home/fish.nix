@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.fish = {
     enable = true;
 
@@ -31,28 +34,26 @@
       }
     ];
 
-    shellAliases =
-      let
-        flakeDir = "~/nix";
-      in
-      {
-        rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
-        upd-nvim = "nix flake update --override-input neovim-flake github:lkarasinski/neovim-flake";
+    shellAliases = let
+      flakeDir = "~/nix";
+    in {
+      rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
+      upd-nvim = "nix flake update --override-input neovim-flake github:lkarasinski/neovim-flake";
 
-        upd = "nix flake update ${flakeDir}";
-        upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}";
+      upd = "nix flake update ${flakeDir}";
+      upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}";
 
-        hms = "home-manager switch --flake ${flakeDir}";
+      hms = "home-manager switch --flake ${flakeDir}";
 
-        pkgs = "nvim ${flakeDir}/modules/home/packages.nix";
+      pkgs = "nvim ${flakeDir}/modules/home/packages.nix";
 
-        ff = "fastfetch";
+      ff = "fastfetch";
 
-        forti = "tmuxp load ~/tmux-sessions/forti.yaml";
-        ksc = "tmuxp load ~/tmux-sessions/ksc.yaml";
+      forti = "tmuxp load ~/tmux-sessions/forti.yaml";
+      ksc = "tmuxp load ~/tmux-sessions/ksc.yaml";
 
-        set-anthropic-key = "set -gx ANTHROPIC_API_KEY (sudo cat /run/secrets/ANTHROPIC_API_KEY)";
-      };
+      set-anthropic-key = "set -gx ANTHROPIC_API_KEY (sudo cat /run/secrets/ANTHROPIC_API_KEY)";
+    };
 
     interactiveShellInit = ''
       direnv hook fish | source

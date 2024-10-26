@@ -3,7 +3,7 @@
     enable = true;
     userName = "Łukasz Karasiński";
     userEmail = "lukasz@karasin.ski";
-    ignores = [ "shell.nix" ];
+    ignores = ["shell.nix"];
 
     extraConfig = {
       rerere.enabled = true;

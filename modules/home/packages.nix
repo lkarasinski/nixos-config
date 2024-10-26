@@ -3,12 +3,10 @@
   pkgs,
   pkgsUnstable,
   ...
-}:
-{
+}: {
   nixpkgs.config.allowUnfree = true;
   home.packages = (
-    with pkgs;
-    [
+    with pkgs; [
       alacritty
       chromium
       obs-studio
