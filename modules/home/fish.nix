@@ -53,6 +53,8 @@
       ksc = "tmuxp load ~/tmux-sessions/ksc.yaml";
 
       set-anthropic-key = "set -gx ANTHROPIC_API_KEY (sudo cat /run/secrets/ANTHROPIC_API_KEY)";
+
+      gpc = "pre-commit run --all-files";
     };
 
     interactiveShellInit = ''
