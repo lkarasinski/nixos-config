@@ -32,7 +32,7 @@
       inherit system;
       nixpkgs.config.allowUnfree = true;
     };
-    cbtxt = pkgsUnstable.callPackage ./pkgs/cbtxt.nix {inherit (pkgsUnstable) wl-clipboard xclip;};
+    cbtxt = pkgsUnstable.callPackage ./pkgs/cbtxt.nix {};
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
