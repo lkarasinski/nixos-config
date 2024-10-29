@@ -17,6 +17,7 @@
       spotify
       bitwarden-desktop
       inputs.neovim-flake.packages.${pkgs.system}.default
+      protonup-qt
 
       nodejs
       bun
