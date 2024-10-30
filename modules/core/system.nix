@@ -16,4 +16,6 @@
 
   # Bluetooth
   hardware.bluetooth.enable = true;
+
+  hardware.wooting.enable = true;
 }

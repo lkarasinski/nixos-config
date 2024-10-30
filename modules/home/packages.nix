@@ -18,6 +18,8 @@
       bitwarden-desktop
       inputs.neovim-flake.packages.${pkgs.system}.default
       protonup-qt
+      wootility
+      wooting-udev-rules
 
       nodejs
       bun

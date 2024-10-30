@@ -6,6 +6,7 @@
       extraGroups = [
         "networkmanager"
         "wheel"
+        "input"
       ];
     };
     defaultUserShell = pkgs.fish;
