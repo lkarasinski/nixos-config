@@ -43,7 +43,7 @@
       upd = "nix flake update ${flakeDir}";
       upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}";
 
-      hms = "home-manager switch --flake ${flakeDir}";
+      hms = "home-manager switch --flake ${flakeDir} -b backup";
 
       pkgs = "nvim ${flakeDir}/modules/home/packages.nix";
 
