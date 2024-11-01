@@ -9,9 +9,9 @@
         TERM = "alacritty";
       };
       font = {
-        size = 14.0;
+        # size = 14.0;
         normal = {
-          family = "CaskaydiaCove Nerd Font Mono";
+          # family = "CaskaydiaCove Nerd Font Mono";
         };
       };
       window = {
@@ -28,6 +28,7 @@
           }
         ];
       };
+      /*
       colors = {
         primary = {
           background = "#181616";
@@ -54,6 +55,7 @@
           white = "#c5c9c5";
         };
       };
+      */
     };
   };
 }

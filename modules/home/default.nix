@@ -13,6 +13,7 @@
     ./lazygit.nix
     ./packages.nix
     ./ssh.nix
+    ./stylix.nix
     ./tmux.nix
   ];
 }

@@ -16,6 +16,8 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = {
@@ -24,6 +26,7 @@
     nixpkgs-unstable,
     home-manager,
     sops-nix,
+    stylix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -51,6 +54,7 @@
     homeConfigurations.lkarasinski = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
       modules = [
+        stylix.homeManagerModules.stylix
         ./modules/home/default.nix
         {home.packages = [cbtxt];}
       ];
