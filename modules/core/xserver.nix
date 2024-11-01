@@ -6,6 +6,7 @@
     xkb = {
       layout = "pl";
       variant = "";
+      options = "caps:escape";
     };
   };
 }
