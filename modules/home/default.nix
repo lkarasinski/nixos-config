@@ -10,6 +10,7 @@
     ./direnv.nix
     ./fish.nix
     ./git.nix
+    ./hyprland.nix
     ./lazygit.nix
     ./packages.nix
     ./ssh.nix
