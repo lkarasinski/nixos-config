@@ -21,7 +21,7 @@
       wootility
       wooting-udev-rules
 
-      nodejs
+      pkgsUnstable.nodejs_23
       bun
       git
       pkgsUnstable.nodePackages.pnpm
