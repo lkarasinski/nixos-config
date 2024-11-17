@@ -51,6 +51,7 @@
       direnv
       btop
       gh
+      mullvad-vpn
 
       # Work
       jitsi-meet-electron
