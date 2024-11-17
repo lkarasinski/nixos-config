@@ -10,6 +10,7 @@
       alacritty
       chromium
       obs-studio
+      vlc
       vesktop
       obsidian
       firefox
