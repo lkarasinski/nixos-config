@@ -12,11 +12,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sps-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     stylix.url = "github:danth/stylix";
   };
 
@@ -25,7 +20,6 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
-    sops-nix,
     stylix,
     ...
   } @ inputs: let
@@ -41,7 +35,6 @@
       inherit system;
       modules = [
         (import ./hosts/nixos)
-        sops-nix.nixosModules.sops
         {
           _module.args.pkgsUnstable = pkgsUnstable;
           environment.systemPackages = [cbtxt];
