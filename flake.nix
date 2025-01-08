@@ -13,8 +13,6 @@
     };
 
     stylix.url = "github:danth/stylix";
-
-    ghostty.url = "github:ghostty-org/ghostty";
   };
 
   outputs = {
@@ -23,7 +21,6 @@
     nixpkgs-unstable,
     home-manager,
     stylix,
-    ghostty,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -40,7 +37,7 @@
         (import ./hosts/nixos)
         {
           _module.args.pkgsUnstable = pkgsUnstable;
-          environment.systemPackages = [cbtxt ghostty.packages.x86_64-linux.default];
+          environment.systemPackages = [cbtxt];
           nixpkgs.config.allowUnfree = true;
           nix.nixPath = ["nixpkgs=${nixpkgs}"];
         }
