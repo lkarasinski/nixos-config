@@ -1,13 +1,12 @@
 {
   inputs,
   pkgs,
-  pkgsUnstable,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
   home.packages = (
     with pkgs; [
-      pkgsUnstable.ghostty
+      ghostty
       alacritty
       chromium
       obs-studio
@@ -23,15 +22,15 @@
       wootility
       wooting-udev-rules
 
-      pkgsUnstable.nodejs_23
+      nodejs_23
       bun
       git
-      pkgsUnstable.nodePackages.pnpm
-      pkgsUnstable.nodePackages.yarn
-      pkgsUnstable.nodePackages."@antfu/ni"
-      pkgsUnstable.nodePackages.typescript
-      pkgsUnstable.typescript
-      pkgsUnstable.biome
+      nodePackages.pnpm
+      nodePackages.yarn
+      nodePackages."@antfu/ni"
+      nodePackages.typescript
+      typescript
+      biome
       tailwindcss
 
       fzf
@@ -49,7 +48,7 @@
       bat
       sqlite
       grc
-      pkgsUnstable.devenv
+      devenv
       direnv
       btop
       gh

@@ -2,9 +2,7 @@
   description = "My system configuration";
 
   inputs = {
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:NixOS/nixpkgs/release-24.05";
-
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     neovim-flake.url = "github:lkarasinski/neovim-flake";
 
     home-manager = {
@@ -18,25 +16,23 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-unstable,
     home-manager,
     stylix,
     ...
   } @ inputs: let
     inherit (self) outputs;
     system = "x86_64-linux";
-    pkgsUnstable = import nixpkgs-unstable {
+    pkgs = import nixpkgs {
       inherit system;
-      nixpkgs.config.allowUnfree = true;
+      config.allowUnfree = true;
     };
-    cbtxt = pkgsUnstable.callPackage ./pkgs/cbtxt.nix {};
+    cbtxt = pkgs.callPackage ./pkgs/cbtxt.nix {};
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
         (import ./hosts/nixos)
         {
-          _module.args.pkgsUnstable = pkgsUnstable;
           environment.systemPackages = [cbtxt];
           nixpkgs.config.allowUnfree = true;
           nix.nixPath = ["nixpkgs=${nixpkgs}"];
@@ -52,7 +48,7 @@
         {home.packages = [cbtxt];}
       ];
       extraSpecialArgs = {
-        inherit inputs pkgsUnstable outputs;
+        inherit inputs outputs;
       };
     };
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
