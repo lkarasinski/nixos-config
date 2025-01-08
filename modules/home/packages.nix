@@ -55,7 +55,8 @@
       mullvad-vpn
 
       # Work
-      jitsi-meet-electron
+      # broken for some reason
+      # jitsi-meet-electron
       openfortivpn
       rocketchat-desktop
     ]
