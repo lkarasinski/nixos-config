@@ -41,6 +41,7 @@
       unzip
       wget
       zoxide
+      eza
       tmuxp
       fastfetch
       any-nix-shell

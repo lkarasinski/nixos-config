@@ -58,6 +58,8 @@
 
       # Run neovim from local flake
       nvimf = "nix run ~/workspace/github.com/lkarasinski/neovim-flake/";
+
+      ls = "eza";
     };
 
     interactiveShellInit = ''
