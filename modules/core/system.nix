@@ -9,6 +9,7 @@
     curl
     wget
     home-manager
+    openconnect
   ];
 
   programs.ssh.startAgent = true;
