@@ -21,6 +21,8 @@
       protonup-qt
       wootility
       wooting-udev-rules
+      code-cursor
+      ghostwriter
 
       nodejs_23
       bun
