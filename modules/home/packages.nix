@@ -21,6 +21,8 @@
       protonup-qt
       wootility
       wooting-udev-rules
+      code-cursor
+      kdePackages.ghostwriter
 
       nodejs_23
       bun
