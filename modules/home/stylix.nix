@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  stylix.image = ./style/wallpaper.png;
+  stylix.image = ./style/wallpaper.jpg;
   stylix.enable = true;
 
   stylix.polarity = "dark";
