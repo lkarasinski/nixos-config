@@ -17,6 +17,7 @@
       google-chrome
       spotify
       bitwarden-desktop
+      calibre
       inputs.neovim-flake.packages.${pkgs.system}.default
       protonup-qt
       wootility
@@ -62,6 +63,7 @@
       # jitsi-meet-electron
       openfortivpn
       rocketchat-desktop
+      element-desktop
     ]
   );
 }
