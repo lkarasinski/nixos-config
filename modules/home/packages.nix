@@ -25,7 +25,7 @@
       code-cursor
       kdePackages.ghostwriter
 
-      nodejs_23
+      nodejs_24
       bun
       git
       nodePackages.pnpm
